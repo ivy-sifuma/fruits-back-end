@@ -7,7 +7,7 @@ class UsersController < ApplicationController
   render json: patients, status: :ok
  end
 
- # Create a new users
+ # Create a new user
  def create
   user = User.create!(user_params)
   session[:user_id] = user.id
