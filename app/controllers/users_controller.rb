@@ -1,24 +1,24 @@
-class PatientsController < ApplicationController
+class UsersController < ApplicationController
  rescue_from ActiveRecord::RecordInvalid, with: :render_record_invalid_response
 
- # List of all patients
+ # List of all users
  def index
-  patients = Patient.all 
+  users = User.all 
   render json: patients, status: :ok
  end
 
- # Create a new patient
+ # Create a new users
  def create
-  patient = Patient.create!(patient_params)
-  session[:patient_id] = patient.id
-  render json: patient, status: :created
+  user = User.create!(user_params)
+  session[:user_id] = user.id
+  render json: user, status: :created
  end
 
- # Display logged in patient info (current user)
+ # Display logged in user info (current user)
  def show
-  patient = Patient.find_by(id: session[:patient_id])
-  if patient
-   render json: patient, status: :ok, serializer: BookedAppSerializerSerializer
+  user = User.find_by(id: session[:user_id])
+  if user
+   render json: user, status: :ok, serializer: FruitAppSerializerSerializer
   else
    render json: { error: "Not authorized" }, status: :unauthorized
   end
@@ -26,8 +26,8 @@ class PatientsController < ApplicationController
 
  private
 
- def patient_params
-  params.permit(:name, :password, :password_confirmation, :condition, :caregiver_id)
+ def user_params
+  params.permit(:name, :password, :password_confirmation)
  end
 
  def render_record_invalid_response(e)
