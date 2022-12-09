@@ -1,10 +1,8 @@
 class Patient < ApplicationRecord
  has_secure_password
 
- belongs_to :caregiver
- has_many :appointments
+ has_many :fruits
  
-
- validates :name, presence: true
- validates :condition, presence: true
+validates :name, presence: true
+ 
 end
