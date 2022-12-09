@@ -23,7 +23,7 @@ default: &default
 
 development:
   <<: *default
-  database: icare_back_development
+  database: fruits_back_development
 
   # The specified database role being used to connect to postgres.
   # To create additional roles in postgres see `$ createuser --help`.
@@ -55,9 +55,9 @@ development:
 # Warning: The database defined as "test" will be erased and
 # re-generated from your development database when you run "rake".
 # Do not set this db to the same as development or production.
-test:
-  <<: *default
-  database: icare_back_test
+# test:
+#   <<: *default
+#   database: icare_back_test
 
 # As with config/credentials.yml, you never want to store sensitive information,
 # like your database password, in your source code. If your source code is
@@ -81,6 +81,6 @@ test:
 #
 production:
   <<: *default
-  database: icare_back_production
-  username: icare_back
-  password: <%= ENV["ICARE_BACK_DATABASE_PASSWORD"] %>
+  database: fruits_back_production
+  username: fruits_back
+  password: <%= ENV["FRUITS_BACK_DATABASE_PASSWORD"] %>
