@@ -1,22 +1,17 @@
 Rails.application.routes.draw do
 
-  get "/caregivers", to: "caregivers#index"
-  post "/caregivers", to: "caregivers#create"
-
-  get "/patients", to: "patients#index"
-  post "/signup", to: "patients#create"
-  get "/me", to: "patients#show"
+  get "/users", to: "users#index"
+  post "/signup", to: "users#create"
+  get "/me", to: "users#show"
 
   post "/login", to: "sessions#create"
   delete "/logout", to: "sessions#destroy"
 
-  get "/appointments", to: "appointments#index"
-  get "/appointments/:id", to: "appointments#show"
-  post "/appointments", to: "appointments#create"
-  delete "/appointments/:id", to: "appointments#destroy"
+  get "/fruits", to: "fruits#index"
+  get "/fruits/:id", to: "fruits#show"
+  post "/fruits", to: "fruits#create"
+  delete "/fruits/:id", to: "fruits#destroy"
   
-  get "/practitioners", to: "practitioners#index"
-
   get "/test", to: "tests#index"
 
 end
