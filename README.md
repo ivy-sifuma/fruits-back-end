@@ -22,3 +22,6 @@ Things you may want to cover:
 * Deployment instructions
 
 * ...
+
+Front-end link 
+https://github.com/ivy-sifuma/fruits-front-end
