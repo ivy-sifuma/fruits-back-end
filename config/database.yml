@@ -83,5 +83,6 @@ development:
 production:
   <<: *default
   database: fruits_back_production
-  username: fruits_back
-  password: <%= ENV["FRUITS_BACK_DATABASE_PASSWORD"] %>
+  username: 
+  password: 
+  host: localhost
